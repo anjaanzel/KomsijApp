@@ -13,8 +13,15 @@ class TaskApiController extends Controller
         return response()->json($task->id);
     }
 
-    // public function getAllTasks()
-    // {
+    public function getAllTasks()
+    {
+        $tasks = Task::all();
+        return response()->json($tasks);
+    }
 
-    // }
+    public function getTasksByUserId(Request $request)
+    {
+        $tasks = Task::where('publisher_id', $request->all()['id']);
+        return response()->json($tasks);
+    }
 }

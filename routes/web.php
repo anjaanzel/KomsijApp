@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 $router->post('task', 'App\Http\Controllers\TaskApiController@createTask');
+$router->get('allTasks', 'App\Http\Controllers\TaskApiController@getAllTasks');
