@@ -21,5 +21,6 @@ Route::get('/', function () {
 $router->post('task', 'App\Http\Controllers\TaskApiController@createTask');
 $router->post('login', 'App\Http\Controllers\TaskApiController@login');
 $router->get('allTasks', 'App\Http\Controllers\TaskApiController@getAllTasks');
-$router->get('{id}/tasksByUser', 'App\Http\Controllers\TaskApiController@getAllTasks');
-
+$router->get('{id}/acceptedTasks', 'App\Http\Controllers\TaskApiController@getAcceptedTasksByUserId');
+$router->get('{id}/publishedTasks', 'App\Http\Controllers\TaskApiController@getPublishedTasksByUserId');
+$router->get('{id}/activeTasks', 'App\Http\Controllers\TaskApiController@getActiveTasksByUserId');
