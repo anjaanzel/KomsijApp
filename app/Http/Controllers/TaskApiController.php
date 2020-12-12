@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskApiController extends Controller
@@ -23,5 +24,11 @@ class TaskApiController extends Controller
     {
         $tasks = Task::where('publisher_id', $id)->orWhere('volunteer_id', $id);
         return response()->json($tasks);
+    }
+
+    public function login(Request $request)
+    {
+        $user = User::where('username', $request->username)->where('password', $request->password)->get()->first();
+        return response()->json($user->id);
     }
 }
