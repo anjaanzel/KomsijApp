@@ -13,6 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'http://localhost:8001/*',
-        'https://komsijapp.azurewebsites.net/*'
+        'https://komsijapp1.azurewebsites.net/*'
     ];
 }
