@@ -17,4 +17,4 @@ Route::get('/', function () {
     dd(1);
 });
 
-$router->post('task', 'taskController@createTask');
+$router->post('task', 'TaskApiController@createTask');
