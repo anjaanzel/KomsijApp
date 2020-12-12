@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ Route::get('/', function () {
     dd(1);
 });
 
-$router->post('task', 'TaskApiController@createTask');
+$router->post('task', 'App\Http\Controllers\TaskApiController@createTask');
