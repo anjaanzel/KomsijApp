@@ -19,9 +19,9 @@ class TaskApiController extends Controller
         return response()->json($tasks);
     }
 
-    public function getTasksByUserId(Request $request)
+    public function getTasksByUserId(int $id)
     {
-        $tasks = Task::where('publisher_id', $request->all()['id']);
+        $tasks = Task::where('publisher_id', $id)->orWhere('volunteer_id', $id);
         return response()->json($tasks);
     }
 }
